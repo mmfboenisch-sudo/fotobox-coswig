@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Fotobox Coswig</title>
+  <title>Fotobox Coswig mieten – Fotobox Coswig</title>
+  <meta name="description" content="Fotobox Coswig mieten für Hochzeiten, Geburtstage & Firmenfeiern. Mit Cloud Upload, verschiedenen Hintergründen und Nebelmaschine.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="HIER-DEIN-CODE-EINFÜGEN">
+
   <style>
     body {
       margin: 0;
@@ -13,19 +17,28 @@
       color: #fff;
     }
 
+    /* Header mit Hintergrund-Slider */
     header {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #fff;
+      overflow: hidden;
     }
 
     header h1 {
       font-size: 3em;
       margin-bottom: 10px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
     header p {
-      color: #cbd5e1;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
 
     .btn {
@@ -37,6 +50,36 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+    }
+
+    /* Slider-Bilder */
+    .header-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slideAnimation 10s infinite;
+    }
+
+    .header-slide:nth-child(1) {
+      background-image: url('Hintergrund1.jpg');
+      animation-delay: 0s;
+    }
+    .header-slide:nth-child(2) {
+      background-image: url('Hintergrund2.jpg');
+      animation-delay: 5s;
+    }
+
+    @keyframes slideAnimation {
+      0% {opacity: 0;}
+      10% {opacity: 1;}
+      40% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 0;}
     }
 
     section {
@@ -94,8 +137,10 @@
 <body>
 
 <header>
+  <div class="header-slide"></div>
+  <div class="header-slide"></div>
   <h1>📸 Fotobox Coswig</h1>
-  <p>Modern. Einfach. Unvergesslich.</p>
+  <p>Fotobox Coswig mieten – Cloud Upload, Hintergründe & Nebelmaschine</p>
   <a href="#kontakt" class="btn">Jetzt anfragen</a>
 </header>
 
@@ -127,10 +172,10 @@
 <section>
   <h2>Galerie</h2>
   <div class="gallery">
-    <img src="Fotobox1.jpeg" alt="Fotobox">
-    <img src="Leinwand1.jpeg" alt="Hintergrund 1">
-    <img src="Leinwand2.jpeg" alt="Hintergrund 2">
-    <img src="Leinwand3.jpeg" alt="Hintergrund 3">
+    <img src="Fotobox1.jpeg" alt="Fotobox Coswig mieten">
+    <img src="Leinwand1.jpeg" alt="Fotobox Hintergrund Leinwand 1">
+    <img src="Leinwand2.jpeg" alt="Fotobox Hintergrund Leinwand 2">
+    <img src="Leinwand3.jpeg" alt="Fotobox Hintergrund Leinwand 3">
   </div>
 </section>
 
