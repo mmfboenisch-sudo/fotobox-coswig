@@ -2,61 +2,18 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Fotobox Coswig mieten – Fotobox Coswig</title>
-<meta name="description" content="Fotobox Coswig mieten für Hochzeiten, Geburtstage & Firmenfeiern. Mit Cloud Upload, verschiedenen Hintergründen und Nebelmaschine.">
+<title>Fotobox Coswig mieten</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="HIER-DEIN-CODE-EINFÜGEN">
-
 <style>
-  body {margin:0; font-family: Arial, sans-serif; color:#fff; background:#0f172a;}
+  body {margin:0; font-family: Arial, sans-serif; background:#0f172a; color:#fff;}
+  header {position: relative; height: 70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; overflow:hidden;}
+  header h1 {font-size:3em; margin-bottom:10px; text-shadow:2px2px6px rgba(0,0,0,0.6);}
+  header p {font-size:1.5em; text-shadow:1px1px4px rgba(0,0,0,0.5);}
+  .btn {display:inline-block; margin-top:20px; padding:12px 25px; background:#38bdf8; color:#000; text-decoration:none; border-radius:8px; font-weight:bold;}
   
-  header {
-    position: relative;
-    height:70vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:#fff;
-    overflow:hidden;
-  }
-  
-  header h1 {font-size:3em; margin-bottom:10px; text-shadow:2px 2px 6px rgba(0,0,0,0.6);}
-  header p {font-size:1.5em; text-shadow:1px 1px 4px rgba(0,0,0,0.5);}
-  
-  .btn {
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#38bdf8;
-    color:#000;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-  }
-
-  .slide {
-    position:absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .slide.active {opacity:1;}
-  
-  section {padding:50px 20px; max-width:1000px; margin:auto;}
-  .features {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-  .card {background:#1e293b; padding:20px; border-radius:12px;}
-  .gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-  .gallery img {width:100%; border-radius:12px;}
-  footer {text-align:center; padding:20px; background:#020617; color:#94a3b8;}
-  .whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; font-size:24px; padding:15px; border-radius:50%; text-decoration:none; box-shadow:0 0 10px rgba(0,0,0,0.3);}
+  /* Slider Bilder */
+  .slide {position:absolute; top:0; left:0; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity 1s ease-in-out;}
+  .slide.show {opacity:1;}
 </style>
 </head>
 <body>
@@ -72,64 +29,26 @@
   <a href="#kontakt" class="btn">Jetzt anfragen</a>
 </header>
 
-<section>
-  <h2>Warum unsere Fotobox?</h2>
-  <div class="features">
-    <div class="card"><h3>☁️ Cloud Upload</h3><p>Alle Fotos sofort online verfügbar.</p></div>
-    <div class="card"><h3>🎭 Verschiedene Hintergründe</h3><p>Leinwand-Hintergründe für jeden Anlass.</p></div>
-    <div class="card"><h3>🌫️ Nebelmaschine</h3><p>Für spektakuläre Effekte auf deinen Fotos.</p></div>
-    <div class="card"><h3>⚡ Einfache Bedienung</h3><p>Plug & Play – perfekt für jede Feier.</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="Fotobox1.jpeg" alt="Fotobox Coswig mieten">
-    <img src="Leinwand1.jpeg" alt="Fotobox Hintergrund Leinwand 1">
-    <img src="Leinwand2.jpeg" alt="Fotobox Hintergrund Leinwand 2">
-    <img src="Leinwand3.jpeg" alt="Fotobox Hintergrund Leinwand 3">
-  </div>
-</section>
-
-<section>
-  <h2>Perfekt für:</h2>
-  <ul>
-    <li>💍 Hochzeiten</li>
-    <li>🎉 Geburtstage</li>
-    <li>🏢 Firmenfeiern</li>
-    <li>🎓 Abschlussfeiern</li>
-  </ul>
-</section>
-
 <section id="kontakt">
   <h2>Kontakt</h2>
   <p>Email: fotobox.coswig@gmail.com</p>
   <p>Telefon: 01626968383</p>
 </section>
 
-<footer>
-  <p>© 2026 Fotobox Coswig</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/491626968383" target="_blank">💬</a>
-
 <script>
-let slides = document.querySelectorAll('.slide');
-let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => slide.classList.remove('active'));
-  slides[index].classList.add('active');
-}
+  function showSlide(index){
+    slides.forEach(slide => slide.classList.remove('show'));
+    slides[index].classList.add('show');
+  }
 
-function nextSlide() {
-  current = (current + 1) % slides.length;
   showSlide(current);
-}
-
-showSlide(current);
-setInterval(nextSlide, 5000); // alle 5 Sekunden wechseln
+  setInterval(()=>{
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  },5000); // Wechsel alle 5 Sekunden
 </script>
 
 </body>
