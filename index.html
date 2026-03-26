@@ -1,142 +1,72 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Fotobox Coswig mieten – Fotobox Coswig</title>
-  <meta name="description" content="Fotobox Coswig mieten für Hochzeiten, Geburtstage & Firmenfeiern. Mit Cloud Upload, verschiedenen Hintergründen und Nebelmaschine.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Fotobox Coswig mieten – Fotobox Coswig</title>
+<meta name="description" content="Fotobox Coswig mieten für Hochzeiten, Geburtstage & Firmenfeiern. Mit Cloud Upload, verschiedenen Hintergründen und Nebelmaschine.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Search Console Verification -->
-  <meta name="google-site-verification" content="HIER-DEIN-CODE-EINFÜGEN">
+<meta name="google-site-verification" content="HIER-DEIN-CODE-EINFÜGEN">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #fff;
-    }
+<style>
+  body {margin:0; font-family: Arial, sans-serif; color:#fff; background:#0f172a;}
+  
+  header {
+    position: relative;
+    height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+  }
+  
+  header h1 {font-size:3em; margin-bottom:10px; text-shadow:2px 2px 6px rgba(0,0,0,0.6);}
+  header p {font-size:1.5em; text-shadow:1px 1px 4px rgba(0,0,0,0.5);}
+  
+  .btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:#000;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+  }
 
-    /* Header mit 4-Bilder-Slider */
-    header {
-      position: relative;
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
-    }
+  .slide {
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+  }
 
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
-
-    header p {
-      font-size: 1.5em;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    /* Slider-Bilder */
-    .header-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: slideAnimation 20s infinite;
-    }
-
-    .header-slide:nth-child(1) { background-image: url('Hintergrund1.jpeg'); animation-delay: 0s; }
-    .header-slide:nth-child(2) { background-image: url('Hintergrund2.jpeg'); animation-delay: 5s; }
-    .header-slide:nth-child(3) { background-image: url('Hintergrund3.jpeg'); animation-delay: 10s; }
-    .header-slide:nth-child(4) { background-image: url('Hintergrund4.jpeg'); animation-delay: 15s; }
-
-    @keyframes slideAnimation {
-      0% {opacity: 0;}
-      10% {opacity: 1;}
-      35% {opacity: 1;}
-      45% {opacity: 0;}
-      100% {opacity: 0;}
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #94a3b8;
-    }
-
-    /* WhatsApp Button */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      font-size: 24px;
-      padding: 15px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-  </style>
+  .slide.active {opacity:1;}
+  
+  section {padding:50px 20px; max-width:1000px; margin:auto;}
+  .features {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+  .card {background:#1e293b; padding:20px; border-radius:12px;}
+  .gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+  .gallery img {width:100%; border-radius:12px;}
+  footer {text-align:center; padding:20px; background:#020617; color:#94a3b8;}
+  .whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; font-size:24px; padding:15px; border-radius:50%; text-decoration:none; box-shadow:0 0 10px rgba(0,0,0,0.3);}
+</style>
 </head>
-
 <body>
 
 <header>
-  <div class="header-slide"></div>
-  <div class="header-slide"></div>
-  <div class="header-slide"></div>
-  <div class="header-slide"></div>
+  <div class="slide" style="background-image:url('Hintergrund1.jpeg')"></div>
+  <div class="slide" style="background-image:url('Hintergrund2.jpeg')"></div>
+  <div class="slide" style="background-image:url('Hintergrund3.jpeg')"></div>
+  <div class="slide" style="background-image:url('Hintergrund4.jpeg')"></div>
+  
   <h1>📸 Fotobox Coswig</h1>
   <p>Fotobox Coswig mieten – Cloud Upload, Hintergründe & Nebelmaschine</p>
   <a href="#kontakt" class="btn">Jetzt anfragen</a>
@@ -145,25 +75,10 @@
 <section>
   <h2>Warum unsere Fotobox?</h2>
   <div class="features">
-    <div class="card">
-      <h3>☁️ Cloud Upload</h3>
-      <p>Alle Fotos sofort online verfügbar.</p>
-    </div>
-
-    <div class="card">
-      <h3>🎭 Verschiedene Hintergründe</h3>
-      <p>Leinwand-Hintergründe für jeden Anlass.</p>
-    </div>
-
-    <div class="card">
-      <h3>🌫️ Nebelmaschine</h3>
-      <p>Für spektakuläre Effekte auf deinen Fotos.</p>
-    </div>
-
-    <div class="card">
-      <h3>⚡ Einfache Bedienung</h3>
-      <p>Plug & Play – perfekt für jede Feier.</p>
-    </div>
+    <div class="card"><h3>☁️ Cloud Upload</h3><p>Alle Fotos sofort online verfügbar.</p></div>
+    <div class="card"><h3>🎭 Verschiedene Hintergründe</h3><p>Leinwand-Hintergründe für jeden Anlass.</p></div>
+    <div class="card"><h3>🌫️ Nebelmaschine</h3><p>Für spektakuläre Effekte auf deinen Fotos.</p></div>
+    <div class="card"><h3>⚡ Einfache Bedienung</h3><p>Plug & Play – perfekt für jede Feier.</p></div>
   </div>
 </section>
 
@@ -197,10 +112,25 @@
   <p>© 2026 Fotobox Coswig</p>
 </footer>
 
-<!-- WhatsApp Button -->
-<a class="whatsapp" href="https://wa.me/491626968383" target="_blank">
-  💬
-</a>
+<a class="whatsapp" href="https://wa.me/491626968383" target="_blank">💬</a>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+showSlide(current);
+setInterval(nextSlide, 5000); // alle 5 Sekunden wechseln
+</script>
 
 </body>
 </html>
