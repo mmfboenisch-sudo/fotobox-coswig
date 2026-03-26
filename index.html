@@ -17,7 +17,7 @@
       color: #fff;
     }
 
-    /* Header mit Hintergrund-Slider */
+    /* Header mit 4-Bilder-Slider */
     header {
       position: relative;
       height: 70vh;
@@ -62,23 +62,19 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      animation: slideAnimation 10s infinite;
+      animation: slideAnimation 20s infinite;
     }
 
-    .header-slide:nth-child(1) {
-      background-image: url('Hintergrund1.jpg');
-      animation-delay: 0s;
-    }
-    .header-slide:nth-child(2) {
-      background-image: url('Hintergrund2.jpg');
-      animation-delay: 5s;
-    }
+    .header-slide:nth-child(1) { background-image: url('Hintergrund1.jpeg'); animation-delay: 0s; }
+    .header-slide:nth-child(2) { background-image: url('Hintergrund2.jpeg'); animation-delay: 5s; }
+    .header-slide:nth-child(3) { background-image: url('Hintergrund3.jpeg'); animation-delay: 10s; }
+    .header-slide:nth-child(4) { background-image: url('Hintergrund4.jpeg'); animation-delay: 15s; }
 
     @keyframes slideAnimation {
       0% {opacity: 0;}
       10% {opacity: 1;}
-      40% {opacity: 1;}
-      50% {opacity: 0;}
+      35% {opacity: 1;}
+      45% {opacity: 0;}
       100% {opacity: 0;}
     }
 
@@ -137,6 +133,8 @@
 <body>
 
 <header>
+  <div class="header-slide"></div>
+  <div class="header-slide"></div>
   <div class="header-slide"></div>
   <div class="header-slide"></div>
   <h1>📸 Fotobox Coswig</h1>
