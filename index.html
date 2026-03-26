@@ -19,6 +19,15 @@
       background: linear-gradient(135deg, #1e293b, #0f172a);
     }
 
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #cbd5e1;
+    }
+
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -45,6 +54,17 @@
     .card {
       background: #1e293b;
       padding: 20px;
+      border-radius: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
       border-radius: 12px;
     }
 
@@ -88,20 +108,40 @@
     </div>
 
     <div class="card">
-      <h3>🎭 Hintergründe</h3>
-      <p>Für jeden Anlass das passende Setup.</p>
+      <h3>🎭 Verschiedene Hintergründe</h3>
+      <p>Leinwand-Hintergründe für jeden Anlass.</p>
     </div>
 
     <div class="card">
       <h3>🌫️ Nebelmaschine</h3>
-      <p>Einzigartige Effekte für deine Bilder.</p>
+      <p>Für spektakuläre Effekte auf deinen Fotos.</p>
     </div>
 
     <div class="card">
       <h3>⚡ Einfache Bedienung</h3>
-      <p>Perfekt für jedes Event.</p>
+      <p>Plug & Play – perfekt für jede Feier.</p>
     </div>
   </div>
+</section>
+
+<section>
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="Fotobox1.jpeg" alt="Fotobox">
+    <img src="Leinwand1.jpeg" alt="Hintergrund 1">
+    <img src="Leinwand2.jpeg" alt="Hintergrund 2">
+    <img src="Leinwand3.jpeg" alt="Hintergrund 3">
+  </div>
+</section>
+
+<section>
+  <h2>Perfekt für:</h2>
+  <ul>
+    <li>💍 Hochzeiten</li>
+    <li>🎉 Geburtstage</li>
+    <li>🏢 Firmenfeiern</li>
+    <li>🎓 Abschlussfeiern</li>
+  </ul>
 </section>
 
 <section id="kontakt">
