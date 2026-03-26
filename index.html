@@ -1,190 +1,125 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Fotobox Coswig</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #fff;
-    }
+<meta charset="UTF-8">
+<title>Fotobox Coswig – Fotobox mieten</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      position: relative;
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-      color: #fff;
-    }
+<style>
+body {margin:0; font-family:Arial,sans-serif; color:#111;}
+header {position:relative; height:80vh; overflow:hidden; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff;}
+header h1 {font-size:3em; text-shadow:2px2px6px rgba(0,0,0,0.6); margin:0;}
+header p {font-size:1.3em; text-shadow:1px1px4px rgba(0,0,0,0.5); margin:10px 0;}
+.cta {background:#38bdf8; color:#000; padding:12px 24px; text-decoration:none; border-radius:6px; font-weight:bold; z-index:2; position:relative;}
 
-    .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+/* Videos & Bilder */
+.slide {
+  position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0; transition: opacity 1s ease-in-out;
+}
+.slide.show {opacity:1;}
 
-    .slide.show {opacity: 1;}
-
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px2px6px rgba(0,0,0,0.6);
-    }
-
-    header p {
-      font-size: 1.5em;
-      text-shadow: 1px1px4px rgba(0,0,0,0.5);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #94a3b8;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      font-size: 24px;
-      padding: 15px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-  </style>
+section {padding:50px 20px; max-width:1000px; margin:auto;}
+.features, .prices, .gallery {display:grid; gap:20px;}
+.features {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.card, .price {background:#f9f9f9; padding:20px; border-radius:12px;}
+.price h3 {margin:0; font-size:1.4em;}
+.gallery img {width:100%; border-radius:8px;}
+footer {text-align:center; padding:20px; background:#222; color:#eee;}
+.whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; font-size:24px;}
+form input, form textarea {width:100%; padding:8px; margin-bottom:10px; border-radius:4px; border:1px solid #ccc;}
+form button {background:#38bdf8; color:#000; padding:10px 20px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="slide" style="background-image:url('Hintergrund1.jpg')"></div>
-  <div class="slide" style="background-image:url('Hintergrund2.jpg')"></div>
-  <div class="slide" style="background-image:url('Hintergrund3.jpg')"></div>
-  <div class="slide" style="background-image:url('Hintergrund4.jpg')"></div>
+  <!-- Slides: Videos & Bilder -->
+  <video class="slide" muted autoplay loop>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <video class="slide" muted autoplay loop>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+  <div class="slide" style="background-image:url('Hintergrund1.jpg'); background-size:cover; background-position:center;"></div>
+  <div class="slide" style="background-image:url('Hintergrund2.jpg'); background-size:cover; background-position:center;"></div>
+  <div class="slide" style="background-image:url('Hintergrund3.jpg'); background-size:cover; background-position:center;"></div>
+  <div class="slide" style="background-image:url('Hintergrund4.jpg'); background-size:cover; background-position:center;"></div>
 
   <h1>📸 Fotobox Coswig</h1>
-  <p>Modern. Einfach. Unvergesslich.</p>
-  <a href="#kontakt" class="btn">Jetzt anfragen</a>
+  <p>Fotobox mieten für Party, Hochzeit & Event</p>
+  <a href="#kontakt" class="cta">Jetzt anfragen</a>
 </header>
 
 <section>
-  <h2>Warum unsere Fotobox?</h2>
-  <div class="features">
-    <div class="card">
-      <h3>☁️ Cloud Upload</h3>
-      <p>Alle Fotos sofort online verfügbar.</p>
-    </div>
-
-    <div class="card">
-      <h3>🎭 Hintergründe</h3>
-      <p>Für jeden Anlass das passende Setup.</p>
-    </div>
-
-    <div class="card">
-      <h3>🌫️ Nebelmaschine</h3>
-      <p>Einzigartige Effekte für deine Bilder.</p>
-    </div>
-
-    <div class="card">
-      <h3>⚡ Einfache Bedienung</h3>
-      <p>Perfekt für jedes Event.</p>
-    </div>
-  </div>
+<h2>Was wir bieten</h2>
+<div class="features">
+  <div class="card"><strong>☁️ Cloud Upload</strong><p>Fotos sofort online abrufbar.</p></div>
+  <div class="card"><strong>🎭 Hintergründe</strong><p>Verschiedene Motive für jeden Anlass.</p></div>
+  <div class="card"><strong>🌫️ Nebelmaschine</strong><p>Effekte für besondere Bilder.</p></div>
+  <div class="card"><strong>⚡ Einfache Bedienung</strong><p>Kinderleicht & schnell bereit.</p></div>
+</div>
 </section>
 
 <section>
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="Fotobox1.jpeg" alt="Fotobox Coswig">
-    <img src="Leinwand1.jpeg" alt="Leinwand Hintergrund 1">
-    <img src="Leinwand2.jpeg" alt="Leinwand Hintergrund 2">
-    <img src="Leinwand3.jpeg" alt="Leinwand Hintergrund 3">
-  </div>
+<h2>Unsere Pakete & Preise</h2>
+<div class="prices">
+  <div class="price"><h3>Basic</h3><p>Fotos online + Hintergründe</p><p>ab 149 €</p></div>
+  <div class="price"><h3>Event</h3><p>inkl. Nebel & Accessoires</p><p>ab 39 €</p></div>
+  <div class="price"><h3>Pro</h3><p>Full‑Service + Auf‑/Abbau</p><p>ab 249 €</p></div>
+</div>
+</section>
+
+<section>
+<h2>Galerie</h2>
+<div class="gallery">
+  <img src="Fotobox1.jpeg" alt="Fotobox Coswig">
+  <img src="Leinwand1.jpeg" alt="Hintergrund Leinwand 1">
+  <img src="Leinwand2.jpeg" alt="Hintergrund Leinwand 2">
+  <img src="Leinwand3.jpeg" alt="Hintergrund Leinwand 3">
+</div>
 </section>
 
 <section id="kontakt">
-  <h2>Kontakt</h2>
-  <p>Email: fotobox.coswig@gmail.com</p>
-  <p>Telefon: 01626968383</p>
+<h2>Kontakt</h2>
+<p>Schreibe uns direkt deine Anfrage:</p>
+
+<form action="https://formspree.io/f/mayvlqwr" method="POST">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">E-Mail:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="event">Event / Anlass:</label>
+<input type="text" id="event" name="event">
+
+<label for="message">Nachricht:</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+
+<button type="submit">Senden</button>
+</form>
+
+<p>Oder kontaktiere uns direkt per E-Mail: fotobox.coswig@gmail.com</p>
 </section>
 
 <footer>
-  <p>© 2026 Fotobox Coswig</p>
+<p>© 2026 Fotobox Coswig</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/491626968383" target="_blank">💬</a>
 
 <script>
-  const slides = document.querySelectorAll('.slide');
-  let current = 0;
+// Kombinierter Slider für Videos & Bilder
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+slides[current].classList.add('show');
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('show'));
-    slides[index].classList.add('show');
-  }
-
-  showSlide(current);
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }, 5000);
+setInterval(() => {
+  slides[current].classList.remove('show');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('show');
+}, 8000); // wechselt alle 8 Sekunden
 </script>
 
 </body>
